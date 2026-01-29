@@ -25,37 +25,7 @@ This project provides a minimal selfbot framework built on top of discord.js cor
 
 After completion, your output may look like this:
 
-```sh
-Logged in as @<username>
-Found 9 valid quests to do.
-Spoofing video for Opera GX.
-Spoofed your game to the Comet AI browser. Wait for 15 more minutes.
-Spoofed your game to Delta Force. Wait for 15 more minutes.
-Spoofed your game to Where Winds Meet. Wait for 15 more minutes.
-Spoofing video for Mobile Orbs Intro.
-Spoofing video for Amazon.
-Spoofing video for Microsoft Edge - Your AI Browser.
-Spoofed your game to Risk of Rain 2. Wait for 15 more minutes.
-Spoofing video for EVE Online Video.
-Quest "Opera GX" completed!
-Quest "Mobile Orbs Intro" completed!
-Quest "Amazon" completed!
-Quest "Microsoft Edge - Your AI Browser" completed!
-Spoofed your game to the Comet AI browser. Wait for 15 more minutes.
-Spoofed your game to Delta Force. Wait for 15 more minutes.
-Spoofed your game to Where Winds Meet. Wait for 15 more minutes.
-Spoofed your game to Risk of Rain 2. Wait for 15 more minutes.
-Quest "EVE Online Video" completed!
-...
-Spoofed your game to the Comet AI browser. Wait for 1 more minutes.
-Spoofed your game to Delta Force. Wait for 1 more minutes.
-Spoofed your game to Where Winds Meet. Wait for 1 more minutes.
-Spoofed your game to Risk of Rain 2. Wait for 1 more minutes.
-Quest "Download Comet Browser" completed!
-Quest "New Season Ahsarah" completed!
-Quest "Where Winds Meet Launch" completed!
-Quest "Alloyed Collective Gupdoption" completed!
-```
+![Imgur](https://i.imgur.com/UHDsY6g.png)
 
 ## 🙏 Credits
 
