@@ -1,28 +1,33 @@
 {
   "name": "discord-quest-selfbot",
   "version": "1.0.0",
-  "description": "demo",
+  "description": "Quest Bot Auto Claim",
   "main": "index.js",
   "scripts": {
-    "start": "tsx --env-file=.env bot.ts"
+    "start": "tsx --env-file=.env bot.ts",
+    "dev": "tsx bot.ts"
   },
   "keywords": [],
-  "author": "aiko-chan-ai",
-  "license": "GPL-3.0-only",
+  "author": "User",
+  "license": "ISC",
   "type": "commonjs",
   "engines": {
-    "node": ">=24"
+    "node": ">=18"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "discord-api-types": "^0.38.34",
-    "tsx": "^4.20.6",
-    "typescript": "^5.8.3"
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@discordjs/core": "2.4.0",
-    "@discordjs/rest": "2.6.0",
-    "@discordjs/ws": "2.0.4",
-    "undici": "6.21.3"
+    "@discordjs/core": "^1.1.1",
+    "@discordjs/rest": "^2.2.0",
+    "@discordjs/ws": "^1.0.2",
+    "discord-api-types": "^0.37.61",
+    "undici": "^6.0.0",
+    "chalk": "^4.1.2",
+    "figlet": "^1.7.0",
+    "cli-table3": "^0.6.3"
   }
 }
