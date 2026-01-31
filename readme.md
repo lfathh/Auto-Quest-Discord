@@ -1,25 +1,42 @@
-# Discord Quest Auto-Completion Selfbot
+# 🤖 Discord Quest Selfbot
 
-A selfbot that automatically completes **Discord Quests**.
+> **Disclaimer:** Selfbots are against Discord ToS. Use this at your own risk. I am not responsible for any bans.
 
-This project provides a minimal selfbot framework built on top of discord.js core libraries, demonstrating how selfbot patches can be implemented without modifying the library’s source code directly.
-
-> [!CAUTION]
-> **Using this on a user account is prohibited by the [Discord TOS](https://discord.com/terms) and can lead to the account block.**
+Bot otomatis untuk menyelesaikan Quest Discord dengan tampilan CLI yang rapi, fitur live countdown, dan deteksi hadiah otomatis.
 
 ## ✨ Features
-
-* Automatically **enrolls** all currently active quests.
-* Automatically **completes** supported quest types.
-* Unsupported for now (due to no valid samples at time of development):
-
-  * `STREAM_ON_DESKTOP`
-  * `PLAY_ACTIVITY`
+> 🖥️ **Tampilan CLI Keren:** Menggunakan tabel rapi dan ASCII art.
+> ⏱️ **Live Countdown:** Menampilkan sisa waktu quest secara real-time.
+> 🎁 **Auto Reward:** Mendeteksi hadiah (Orbs/Decoration) secara otomatis.
+> ⚡ **Ringan & Cepat:** Dibangun menggunakan TypeScript & Node.js terbaru.
 
 ## 📦 Installation & Setup
 
 > [!NOTE]
-> **Node.js 24.0.0 or newer is required**
+> **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**
+> [Git](https://git-scm.com/)
+
+## 🚀 Cara Install & Menjalankan
+Ikuti langkah-langkah berikut di terminal (CMD/PowerShell/Termux):
+
+### 1. Clone Repositori
+```
+git clone https://github.com/lfathh/Auto-Quest-Discord.gitK
+cd Auto-Quest-Discord
+```
+### 2. Install Modules
+```
+npm install
+```
+### 3. Setup Token
+Buat file baru bernama `.env` di dalam folder bot, lalu isi token Discord kamu:
+```
+TOKEN=TOKEN DISCORD ANDA
+```
+### Run Script
+```
+npm start
+```
 
 ## 📤 Example Output
 
@@ -28,7 +45,6 @@ After completion, your output may look like this:
 ![Imgur](https://i.imgur.com/UHDsY6g.png)
 
 ## 🙏 Credits
-
-* [discord.js](https://github.com/discordjs/discord.js)
+> [discord.js](https://github.com/discordjs/discord.js)
 
 *Readme compiled with assistance from AI.*
