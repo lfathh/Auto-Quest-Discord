@@ -2,8 +2,7 @@
 
 > **Disclaimer:** Selfbots are against Discord ToS. Use this at your own risk. I am not responsible for any bans.
 
-Bot otomatis untuk menyelesaikan Quest Discord dengan tampilan CLI yang rapi, fitur live countdown, dan deteksi hadiah otomatis.
-
+Automated bot for completing Discord Missions with a clean CLI interface, live countdown feature, and automatic reward detection.
 ## ✨ Features
 > 🖥️ **Tampilan CLI Keren:** Menggunakan tabel rapi dan ASCII art.
 > ⏱️ **Live Countdown:** Menampilkan sisa waktu quest secara real-time.
@@ -13,7 +12,7 @@ Bot otomatis untuk menyelesaikan Quest Discord dengan tampilan CLI yang rapi, fi
 ## 📦 Installation & Setup
 
 > [!NOTE]
-> **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**
+> **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**.
 > **[Git](https://git-scm.com/)**
 
 ## 🚀 Cara Install & Menjalankan
