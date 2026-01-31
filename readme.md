@@ -14,7 +14,7 @@ Bot otomatis untuk menyelesaikan Quest Discord dengan tampilan CLI yang rapi, fi
 
 > [!NOTE]
 > **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**
-> [Git](https://git-scm.com/)
+> **[Git](https://git-scm.com/)**
 
 ## 🚀 Cara Install & Menjalankan
 Ikuti langkah-langkah berikut di terminal (CMD/PowerShell/Termux):
