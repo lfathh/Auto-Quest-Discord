@@ -12,7 +12,7 @@ Automated bot for completing Discord Missions with a clean CLI interface, live c
 ## 📦 Installation & Setup
 
 > [!NOTE]
-> **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**.
+> **[Node.js](https://nodejs.org/) 24.0.0 or newer is required**
 > **[Git](https://git-scm.com/)**
 
 ## 🚀 Cara Install & Menjalankan
