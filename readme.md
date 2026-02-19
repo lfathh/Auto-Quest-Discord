@@ -20,7 +20,7 @@ Ikuti langkah-langkah berikut di terminal (CMD/PowerShell/Termux):
 
 ### 1. Clone Repositori
 ```
-git clone https://github.com/lfathh/Auto-Quest-Discord.gitK
+git clone https://github.com/lfathh/Auto-Quest-Discord.git
 cd Auto-Quest-Discord
 ```
 ### 2. Install Modules
