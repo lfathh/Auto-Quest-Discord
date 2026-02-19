@@ -45,5 +45,3 @@ After completion, your output may look like this:
 
 ## 🙏 Credits
 > [discord.js](https://github.com/discordjs/discord.js)
-
-*Readme compiled with assistance from AI.*
