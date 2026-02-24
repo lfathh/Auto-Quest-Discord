@@ -1,2 +1,274 @@
+import { GatewayDispatchEvents } from 'discord-api-types/v10';
+import chalk from 'chalk';
+import Table from 'cli-table3';
+import figlet from 'figlet';
+import { ClientQuest } from './src/client';
+import { Quest } from './src/quest';
 
-const a0_0x2bf671=a0_0x2d2a;(function(_0x2488a9,_0x53b5d0){const _0x5284ea=a0_0x2d2a,_0x3b6fe5=_0x2488a9();while(!![]){try{const _0x41405f=-parseInt(_0x5284ea(0x247))/0x1+-parseInt(_0x5284ea(0x22e))/0x2*(parseInt(_0x5284ea(0x203))/0x3)+-parseInt(_0x5284ea(0x1ce))/0x4+-parseInt(_0x5284ea(0x25c))/0x5+-parseInt(_0x5284ea(0x1e0))/0x6+parseInt(_0x5284ea(0x1f2))/0x7+parseInt(_0x5284ea(0x22b))/0x8*(parseInt(_0x5284ea(0x209))/0x9);if(_0x41405f===_0x53b5d0)break;else _0x3b6fe5['push'](_0x3b6fe5['shift']());}catch(_0x12b9ac){_0x3b6fe5['push'](_0x3b6fe5['shift']());}}}(a0_0xff61,0x59369));const a0_0x551165=(function(){let _0x5c39a7=!![];return function(_0x316213,_0x18d175){const _0x14ef9e=_0x5c39a7?function(){const _0x2427fe=a0_0x2d2a;if(_0x18d175){const _0x465745=_0x18d175[_0x2427fe(0x23b)](_0x316213,arguments);return _0x18d175=null,_0x465745;}}:function(){};return _0x5c39a7=![],_0x14ef9e;};}()),a0_0x2b04c1=a0_0x551165(this,function(){const _0x3865e9=a0_0x2d2a,_0x29d0a5={'kVKKI':'(((.+)+)+)+$'};return a0_0x2b04c1[_0x3865e9(0x265)]()[_0x3865e9(0x1cf)](_0x29d0a5[_0x3865e9(0x210)])['toString']()['constructor'](a0_0x2b04c1)[_0x3865e9(0x1cf)](_0x3865e9(0x23e));});a0_0x2b04c1();'use strict';var __awaiter=this&&this[a0_0x2bf671(0x1f7)]||function(_0x19f41b,_0x317aea,_0x46bf16,_0x2288af){const _0x376094={'UZilo':function(_0x4eb708,_0x4def1a){return _0x4eb708(_0x4def1a);},'qAogS':function(_0xee2a6e,_0x3652fe){return _0xee2a6e instanceof _0x3652fe;},'pDePC':function(_0x3274b0,_0x2d6ae0){return _0x3274b0(_0x2d6ae0);},'CQSgF':'throw','rZekG':function(_0x239e41,_0x1e0e2b){return _0x239e41(_0x1e0e2b);}};function _0x224968(_0x3ce1cd){const _0x9d3ea9=a0_0x2d2a;return _0x376094[_0x9d3ea9(0x257)](_0x3ce1cd,_0x46bf16)?_0x3ce1cd:new _0x46bf16(function(_0x19130d){const _0x43892a=_0x9d3ea9;_0x376094[_0x43892a(0x26c)](_0x19130d,_0x3ce1cd);});}return new(_0x46bf16||(_0x46bf16=Promise))(function(_0x6283be,_0x389e67){const _0x2db85a=a0_0x2d2a;function _0x5f158b(_0x49a5ae){const _0x4f1a88=a0_0x2d2a;try{_0x376094[_0x4f1a88(0x26c)](_0x440734,_0x2288af[_0x4f1a88(0x1c9)](_0x49a5ae));}catch(_0x461e27){_0x389e67(_0x461e27);}}function _0xa39a53(_0x265ed4){const _0x3c4fbe=a0_0x2d2a;try{_0x376094['pDePC'](_0x440734,_0x2288af[_0x376094[_0x3c4fbe(0x1cc)]](_0x265ed4));}catch(_0x3b184a){_0x376094[_0x3c4fbe(0x26c)](_0x389e67,_0x3b184a);}}function _0x440734(_0x2375b6){const _0x218b79=a0_0x2d2a;_0x2375b6[_0x218b79(0x229)]?_0x376094[_0x218b79(0x1ee)](_0x6283be,_0x2375b6[_0x218b79(0x208)]):_0x224968(_0x2375b6[_0x218b79(0x208)])[_0x218b79(0x1e1)](_0x5f158b,_0xa39a53);}_0x376094[_0x2db85a(0x26c)](_0x440734,(_0x2288af=_0x2288af[_0x2db85a(0x23b)](_0x19f41b,_0x317aea||[]))[_0x2db85a(0x1c9)]());});},__importDefault=this&&this[a0_0x2bf671(0x20d)]||function(_0x1a9b1d){const _0x5275f3=a0_0x2bf671;return _0x1a9b1d&&_0x1a9b1d[_0x5275f3(0x1f3)]?_0x1a9b1d:{'default':_0x1a9b1d};};Object[a0_0x2bf671(0x24a)](exports,a0_0x2bf671(0x1f3),{'value':!![]});function a0_0xff61(){const _0x172ee3=['The\x20Running\x20Man','445156PSRpTF','remaining','\x0a>>\x20Press\x20Ctrl+C\x20to\x20stop.','✨\x20All\x20tasks\x20finished.','rewards_config','htJox','\x0a✅\x20\x20FINAL\x20EXECUTION\x20REPORT','once','GO\x20Wild\x20Area\x202025','messages','Fetching\x20quests...','jNvaK','Call\x20of\x20Duty:\x20Black\x20Ops\x207','apply','HJCOp','config','(((.+)+)+)+$','message','mGHMG','figlet','map','log','Amazon','Jurassic\x20World\x20Rebirth','King\x20of\x20Meat\x20Sale','676305mUVmGj','bold','floor','defineProperty','xzrmF','hDDfK','dxBLw','Painkiller','❌\x20No\x20valid\x20quests\x20found.','Dance\x20with\x20a\x20Demon','\x20Orbs','hCIEQ','XTZAC','doingQuest','cyan','yellow','qAogS','Result','iYSqU','GatewayDispatchEvents','\x0a📋\x20\x20LIVE\x20PROGRESS','62595cOjwTF','Palworld\x20Collab','Alloyed\x20Collective\x20Gupdoption','keys','R.E.P.O.\x20Monster','Done','Where\x20Winds\x20Meet\x20Launch','Anno\x20117','green','toString','YQFjq','forEach','▶\x20Running','user','The\x20Power\x20of\x20Nitro','etwkw','UZilo','RoECQ','AbJWq','Uauby','uSOAc','Lxawa','NkxNa','Download\x20Comet\x20Browser','User\x20ID','next','PvZ\x20Replanted','duration','CQSgF','reward','240960zlDBIv','search','Battlefield\x206\x20on\x20PS5\x20Video','pyzNx','unknown','Honkai:\x20Star\x20Rail','name','allSettled','lZUEg','PVaKG','ARC\x20Raiders','XvISs','Ready','niIfM','User\x20Account','left','length','Unknown','657348sLgLDD','then','Unknown\x20Error','FAILED','cli-table3','Time\x20Left','qTmIx','Mobile\x20Orbs\x20Intro','Battlefield\x206\x20Launch','vvxIw','Crimson\x20Desert','XgGDe','default','center','rZekG','reason','target','ZhGdO','3491397HqmEQm','__esModule','Quest\x20Name','\x0a✅\x20\x20SYSTEM\x20RUNNING...','yYOkF','__awaiter','Discord\x20Halloween\x202025','Running','Monopoly\x20at\x20McD’s','red','BzpBq','tasks','aQGgz','clear','substring','kIzvL','GGxWT','3hdlqlK','cnUKR','magenta','white','Battlefield\x20REDSEC','value','8530614bGdBUX','QjGCP','status','fulfilled','__importDefault','chalk','hCaYO','kVKKI','blue','Owlmk','✔\x20Done','WXIZd','Completed','Reward','JxXmS','Chainsaw\x20Man\x20–\x20The\x20Movie:\x20Reze\x20Arc','Auto\x20Quest\x20lfathh','Pumhw','Bloons\x20TD\x206\x20Dart\x20Monkey','ClientQuest','AJZPR','rewards','quest_name','eiBji','XWdHr','username','Fortnite\x20Discord','push','replace','DLCEd','orb_quantity','Firefox','done','WHwFO','8wXYMzu','✔\x20DONE'];a0_0xff61=function(){return _0x172ee3;};return a0_0xff61();}const v10_1=require('discord-api-types/v10'),client_1=require('./src/client'),figlet_1=__importDefault(require(a0_0x2bf671(0x241))),chalk_1=__importDefault(require(a0_0x2bf671(0x20e))),cli_table3_1=__importDefault(require(a0_0x2bf671(0x1e4))),client=new client_1[(a0_0x2bf671(0x21c))](process.env.TOKEN),QUEST_DB={'1432436088508780675':{'name':a0_0x2bf671(0x260),'duration':0x384},'1436125144404725770':{'name':a0_0x2bf671(0x1c7),'duration':0x384},'1439764528715010058':{'name':'New\x20Season\x20Ahsarah','duration':0x384},'1440059727005614090':{'name':'Opera\x20GX','duration':0x2a},'1418350811687419914':{'name':a0_0x2bf671(0x26a),'duration':0x18},'1425677992721514516':{'name':a0_0x2bf671(0x1e8),'duration':0x384},'1432424574561026070':{'name':a0_0x2bf671(0x250),'duration':0x384},'1435391191834165398':{'name':'ABI\x20Red\x20Drops\x20Fest','duration':0x384},'1437518140476100638':{'name':'Marvel\x20Rivals\x20S5.0','duration':0x384},'1431027486506094623':{'name':'Amazon\x20Luna','duration':0x1d},'1428083229587669155':{'name':a0_0x2bf671(0x21b),'duration':0x384},'1428459919212019874':{'name':a0_0x2bf671(0x1ea),'duration':0x1d},'1435016951251603496':{'name':'Courtroom\x20Chaos','duration':0x4b},'1421275302923079721':{'name':'Space\x20Marine\x202\x20Free\x20Demo','duration':0x384},'1435012985872715946':{'name':a0_0x2bf671(0x263),'duration':0x9e},'1432205768106705070':{'name':a0_0x2bf671(0x207),'duration':0x384},'1435367355759726642':{'name':a0_0x2bf671(0x246),'duration':0x1d},'1436481141711442101':{'name':a0_0x2bf671(0x262),'duration':0x384},'1430279721777762495':{'name':a0_0x2bf671(0x1ca),'duration':0x384},'1432798014786764871':{'name':a0_0x2bf671(0x1d3),'duration':0x384},'1410358070831480904':{'name':a0_0x2bf671(0x1e7),'duration':0x1f},'1428139680477614150':{'name':a0_0x2bf671(0x1d8),'duration':0x5b},'1432410015721062480':{'name':'ARC\x20Raiders','duration':0x384},'1427820398283722833':{'name':a0_0x2bf671(0x24e),'duration':0x63},'1427811805065121875':{'name':a0_0x2bf671(0x1d0),'duration':0x1d},'1435777559475257428':{'name':a0_0x2bf671(0x244),'duration':0x1d},'1422714633357103315':{'name':a0_0x2bf671(0x1fa),'duration':0x60},'1435324548827451605':{'name':a0_0x2bf671(0x236),'duration':0x1d},'1437537235133005914':{'name':a0_0x2bf671(0x23a),'duration':0x384},'1438202046804136028':{'name':'Microsoft\x20Edge\x20-\x20Your\x20AI\x20Browser','duration':0x1d},'1428092429030129755':{'name':a0_0x2bf671(0x218),'duration':0x3d},'1434969640194539610':{'name':'Dinkum\x20on\x20Switch','duration':0x59},'1438642430571315290':{'name':a0_0x2bf671(0x25e),'duration':0x384},'1433219183411462265':{'name':a0_0x2bf671(0x25d),'duration':0x384},'1435003145339273317':{'name':a0_0x2bf671(0x22d),'duration':0x94},'1433542422268350574':{'name':a0_0x2bf671(0x228),'duration':0x13},'1430258734113755247':{'name':a0_0x2bf671(0x245),'duration':0x1d},'1432770475590684784':{'name':a0_0x2bf671(0x223),'duration':0x384},'1438303745166409840':{'name':'EVE\x20Online\x20Video','duration':0x59},'1425291943302398073':{'name':a0_0x2bf671(0x1f8),'duration':0x16},'1427829905323724922':{'name':'Bugonia','duration':0x72}};let activeQuests=[];function formatTime(_0x5b683d){const _0x1b8aba=a0_0x2bf671,_0x35ad40={'ozjPt':function(_0x2c5ce1,_0x384658){return _0x2c5ce1<=_0x384658;},'Uauby':_0x1b8aba(0x22c),'WqGOL':function(_0x20a66d,_0x492143){return _0x20a66d/_0x492143;},'GVWlx':function(_0x436bad,_0x555dce){return _0x436bad%_0x555dce;},'YQFjq':function(_0x498cc5,_0x3f44f6){return _0x498cc5%_0x3f44f6;},'MToXo':function(_0x44ca1f,_0x579f2d){return _0x44ca1f>_0x579f2d;}};if(_0x35ad40['ozjPt'](_0x5b683d,0x0))return chalk_1[_0x1b8aba(0x1ec)]['bold'][_0x1b8aba(0x264)](_0x35ad40[_0x1b8aba(0x26f)]);const _0x5d9c03=Math[_0x1b8aba(0x249)](_0x35ad40['WqGOL'](_0x5b683d,0xe10)),_0x259433=Math[_0x1b8aba(0x249)](_0x35ad40['WqGOL'](_0x35ad40['GVWlx'](_0x5b683d,0xe10),0x3c)),_0x2dd447=_0x35ad40[_0x1b8aba(0x266)](_0x5b683d,0x3c);return''+(_0x35ad40['MToXo'](_0x5d9c03,0x0)?_0x5d9c03+'h\x20':'')+_0x259433+'m\x20'+_0x2dd447+'s';}function getQuestData(_0x3550a9){const _0x3a36a9=a0_0x2bf671,_0x1374ef={'hCaYO':function(_0x22a886,_0x10614e){return _0x22a886===_0x10614e;},'etwkw':_0x3a36a9(0x1d2),'aQGgz':function(_0x1ef912,_0x450331){return _0x1ef912===_0x450331;},'XWdHr':function(_0xe14da9,_0x4717e3){return _0xe14da9===_0x4717e3;},'Owlmk':function(_0xbfb201,_0x5001b6){return _0xbfb201===_0x5001b6;},'ZhGdO':function(_0x3a8d77,_0x1351b5){return _0x3a8d77===_0x1351b5;},'lauVP':function(_0x3b1a87,_0x123391){return _0x3b1a87===_0x123391;},'XvISs':function(_0x3692a1,_0x2bc923){return _0x3692a1>_0x2bc923;},'WXIZd':function(_0x3ee72e,_0x14c6b5){return _0x3ee72e===_0x14c6b5;}};var _0x145add,_0x566b32,_0x4f7121,_0x4129ee,_0x369631,_0x4f0a00,_0x14da9a,_0x21ae32,_0x47d936;const _0x5abc9c=_0x3550a9['id']||(_0x1374ef[_0x3a36a9(0x20f)](_0x145add=_0x3550a9['config'],null)||_0x1374ef[_0x3a36a9(0x20f)](_0x145add,void 0x0)?void 0x0:_0x145add['id'])||_0x1374ef[_0x3a36a9(0x26b)];let _0x527d2d=_0x5abc9c,_0x15c177=0x384,_0x5bccac=_0x3a36a9(0x1df);if(QUEST_DB[_0x5abc9c])_0x527d2d=QUEST_DB[_0x5abc9c][_0x3a36a9(0x1d4)],_0x15c177=QUEST_DB[_0x5abc9c][_0x3a36a9(0x1cb)];else(_0x1374ef['aQGgz'](_0x4f7121=(_0x566b32=_0x3550a9[_0x3a36a9(0x23d)])===null||_0x1374ef[_0x3a36a9(0x221)](_0x566b32,void 0x0)?void 0x0:_0x566b32[_0x3a36a9(0x237)],null)||_0x4f7121===void 0x0?void 0x0:_0x4f7121[_0x3a36a9(0x21f)])?_0x527d2d=_0x3550a9[_0x3a36a9(0x23d)][_0x3a36a9(0x237)][_0x3a36a9(0x21f)]['trim']():_0x527d2d=_0x5abc9c['toString']()[_0x3a36a9(0x225)](/_/g,'\x20')[_0x3a36a9(0x225)](/-/g,'\x20');const _0x1ad690=(_0x369631=_0x1374ef[_0x3a36a9(0x212)](_0x4129ee=_0x3550a9[_0x3a36a9(0x23d)],null)||_0x1374ef[_0x3a36a9(0x1fe)](_0x4129ee,void 0x0)?void 0x0:_0x4129ee['task_config'])===null||_0x369631===void 0x0?void 0x0:_0x369631[_0x3a36a9(0x1fd)];if(_0x1ad690){const _0x105a9e=Object[_0x3a36a9(0x25f)](_0x1ad690)[0x0];(_0x1374ef['ZhGdO'](_0x4f0a00=_0x1ad690[_0x105a9e],null)||_0x4f0a00===void 0x0?void 0x0:_0x4f0a00['target'])&&(_0x15c177=_0x1ad690[_0x105a9e][_0x3a36a9(0x1f0)]);}const _0x3cde95=_0x1374ef['lauVP'](_0x21ae32=_0x1374ef[_0x3a36a9(0x1f1)](_0x14da9a=_0x3550a9[_0x3a36a9(0x23d)],null)||_0x1374ef['lauVP'](_0x14da9a,void 0x0)?void 0x0:_0x14da9a[_0x3a36a9(0x232)],null)||_0x1374ef[_0x3a36a9(0x1fe)](_0x21ae32,void 0x0)?void 0x0:_0x21ae32[_0x3a36a9(0x21e)];if(_0x3cde95&&_0x1374ef[_0x3a36a9(0x1d9)](_0x3cde95['length'],0x0)){if(_0x1374ef[_0x3a36a9(0x214)](_0x47d936=_0x3cde95[0x0][_0x3a36a9(0x237)],null)||_0x1374ef['Owlmk'](_0x47d936,void 0x0)?void 0x0:_0x47d936[_0x3a36a9(0x1d4)])_0x5bccac=_0x3cde95[0x0][_0x3a36a9(0x237)][_0x3a36a9(0x1d4)];else _0x3cde95[0x0][_0x3a36a9(0x227)]&&(_0x5bccac=_0x3cde95[0x0]['orb_quantity']+_0x3a36a9(0x251));}return{'name':_0x527d2d,'duration':_0x15c177,'reward':_0x5bccac};}function a0_0x2d2a(_0x4c4971,_0x59d118){_0x4c4971=_0x4c4971-0x1c4;const _0x1d79c5=a0_0xff61();let _0x2b04c1=_0x1d79c5[_0x4c4971];return _0x2b04c1;}function renderScreen(_0x2d9fde){const _0xb31f42=a0_0x2bf671,_0x27b8b4={'Pumhw':function(_0x53be6c,_0x46db2f){return _0x53be6c<_0x46db2f;},'cnUKR':function(_0x4b0d40,_0x432505){return _0x4b0d40>_0x432505;},'AJZPR':function(_0x282169,_0x2b12ae){return _0x282169+_0x2b12ae;},'pyzNx':function(_0xcc77,_0xcb5387){return _0xcc77(_0xcb5387);},'BqmKV':function(_0x806d49,_0x3a86f2){return _0x806d49(_0x3a86f2);},'jNvaK':function(_0x205768,_0x42d887){return _0x205768===_0x42d887;},'XgGDe':_0xb31f42(0x1f9),'JxXmS':_0xb31f42(0x268),'htJox':_0xb31f42(0x213),'niIfM':_0xb31f42(0x219),'HJwul':_0xb31f42(0x1f5),'PigQh':_0xb31f42(0x1dc),'uSOAc':_0xb31f42(0x1c8),'qTmIx':_0xb31f42(0x206),'dxBLw':_0xb31f42(0x1f4),'GGxWT':_0xb31f42(0x216),'XTZAC':_0xb31f42(0x1e5),'KwUPY':'Status','kIzvL':_0xb31f42(0x1dd),'yYOkF':_0xb31f42(0x1ed),'xzrmF':_0xb31f42(0x25b)};console[_0xb31f42(0x1ff)](),console['log'](chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x255)](figlet_1[_0xb31f42(0x1ec)]['textSync'](_0x27b8b4[_0xb31f42(0x1db)],{'font':'Slant'}))),console['log'](chalk_1[_0xb31f42(0x1ec)]['bold'][_0xb31f42(0x264)](_0x27b8b4['HJwul']));const _0xa846dd=new cli_table3_1[(_0xb31f42(0x1ec))]({'head':[chalk_1['default'][_0xb31f42(0x206)](_0x27b8b4['PigQh']),chalk_1[_0xb31f42(0x1ec)]['white'](_0x27b8b4[_0xb31f42(0x1c4)])],'colWidths':[0x1e,0x19],'style':{'border':[_0x27b8b4[_0xb31f42(0x1e6)]],'padding-left':0x1,'padding-right':0x1}});_0xa846dd[_0xb31f42(0x224)]([chalk_1[_0xb31f42(0x1ec)]['yellow'](_0x2d9fde[_0xb31f42(0x222)]),chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x255)](_0x2d9fde['id'])]),console[_0xb31f42(0x243)](_0xa846dd[_0xb31f42(0x265)]());const _0xd6de26=new cli_table3_1['default']({'head':[chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x206)]('No'),chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x206)](_0x27b8b4[_0xb31f42(0x24d)]),chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x206)](_0x27b8b4[_0xb31f42(0x202)]),chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x206)](_0x27b8b4[_0xb31f42(0x253)]),chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x206)](_0x27b8b4['KwUPY'])],'colWidths':[0x6,0x23,0x14,0xf,0xf],'colAligns':[_0xb31f42(0x1ed),_0x27b8b4[_0xb31f42(0x201)],_0xb31f42(0x1ed),_0x27b8b4[_0xb31f42(0x1f6)],_0x27b8b4['yYOkF']],'style':{'border':[_0x27b8b4['qTmIx']]}});activeQuests[_0xb31f42(0x267)]((_0x596490,_0x574615)=>{const _0x4828b3=_0xb31f42;let _0x553c97=chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x256)];if(_0x27b8b4[_0x4828b3(0x21a)](_0x596490[_0x4828b3(0x22f)],0x3c)&&_0x27b8b4[_0x4828b3(0x204)](_0x596490[_0x4828b3(0x22f)],0x0))_0x553c97=chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x1fb)];_0xd6de26['push']([_0x27b8b4[_0x4828b3(0x21d)](_0x574615,0x1),chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x255)](_0x596490[_0x4828b3(0x1d4)]),chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x205)](_0x596490[_0x4828b3(0x1cd)]),_0x27b8b4[_0x4828b3(0x1d1)](_0x553c97,_0x27b8b4['BqmKV'](formatTime,_0x596490[_0x4828b3(0x22f)])),_0x27b8b4[_0x4828b3(0x239)](_0x596490[_0x4828b3(0x20b)],_0x27b8b4[_0x4828b3(0x1eb)])?chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x211)](_0x27b8b4[_0x4828b3(0x217)]):chalk_1[_0x4828b3(0x1ec)][_0x4828b3(0x264)](_0x27b8b4[_0x4828b3(0x233)])]);}),console['log'](chalk_1[_0xb31f42(0x1ec)][_0xb31f42(0x248)]['white'](_0x27b8b4[_0xb31f42(0x24b)])),console[_0xb31f42(0x243)](_0xd6de26['toString']()),console[_0xb31f42(0x243)](chalk_1[_0xb31f42(0x1ec)]['gray'](_0xb31f42(0x230)));}client[a0_0x2bf671(0x235)](v10_1[a0_0x2bf671(0x25a)][a0_0x2bf671(0x1da)],_0x3fd550=>__awaiter(void 0x0,[_0x3fd550],void 0x0,function*({data:_0x4b0bb8}){const _0x2c1088=a0_0x2bf671,_0x29de27={'hDDfK':function(_0x8a18bc,_0x9d7191){return _0x8a18bc(_0x9d7191);},'NmzqS':_0x2c1088(0x1f9),'PVaKG':function(_0x30359e,_0x96d47c){return _0x30359e>_0x96d47c;},'RoECQ':_0x2c1088(0x261),'JVIxe':function(_0x10423a,_0x38a9e5){return _0x10423a(_0x38a9e5);},'iYSqU':function(_0x28d1da,_0x17badd){return _0x28d1da===_0x17badd;},'cFzjO':_0x2c1088(0x20c),'vMNVO':_0x2c1088(0x215),'DLCEd':'SUCCESS','QjGCP':_0x2c1088(0x1e2),'lZUEg':_0x2c1088(0x238),'AbJWq':_0x2c1088(0x24f),'mGHMG':function(_0xd7658,_0x1ad8a9,_0x2c6e47){return _0xd7658(_0x1ad8a9,_0x2c6e47);},'NkxNa':function(_0x41ad1d,_0x5977d7){return _0x41ad1d(_0x5977d7);},'Lxawa':function(_0x3657dd,_0x2452f3){return _0x3657dd(_0x2452f3);},'BzpBq':_0x2c1088(0x234),'snLnn':'Quest','HJCOp':_0x2c1088(0x258),'WHwFO':_0x2c1088(0x206),'hCIEQ':_0x2c1088(0x231)};console['log'](chalk_1[_0x2c1088(0x1ec)]['cyan'](_0x29de27[_0x2c1088(0x1d6)])),yield client['fetchQuests']();const _0xa91992=client['questManager']['filterQuestsValid']();if(_0xa91992[_0x2c1088(0x1de)]===0x0){console[_0x2c1088(0x243)](chalk_1[_0x2c1088(0x1ec)]['red'](_0x29de27[_0x2c1088(0x26e)]));return;}activeQuests=_0xa91992[_0x2c1088(0x242)](_0x127e53=>{const _0x5cea64=_0x2c1088,_0x2f2215=_0x29de27[_0x5cea64(0x24c)](getQuestData,_0x127e53);return{'id':_0x127e53['id'],'name':_0x2f2215[_0x5cea64(0x1d4)],'reward':_0x2f2215[_0x5cea64(0x1cd)],'remaining':_0x2f2215[_0x5cea64(0x1cb)],'status':_0x29de27['NmzqS']};});const _0x1306bb=_0x29de27[_0x2c1088(0x240)](setInterval,()=>{const _0x5c780c=_0x2c1088,_0x4eac42={'eiBji':function(_0x4ae02c,_0x58aa20){const _0x298e31=a0_0x2d2a;return _0x29de27[_0x298e31(0x1d7)](_0x4ae02c,_0x58aa20);},'vvxIw':_0x29de27[_0x5c780c(0x26d)]};activeQuests['forEach'](_0x26e834=>{const _0x2c0a5c=_0x5c780c;_0x4eac42[_0x2c0a5c(0x220)](_0x26e834['remaining'],0x0)?_0x26e834[_0x2c0a5c(0x22f)]--:_0x26e834[_0x2c0a5c(0x20b)]=_0x4eac42[_0x2c0a5c(0x1e9)];}),_0x29de27['JVIxe'](renderScreen,_0x4b0bb8[_0x5c780c(0x269)]);},0x3e8),_0x1fcc21=yield Promise[_0x2c1088(0x1d5)](_0xa91992[_0x2c1088(0x242)](_0x5813b3=>client['questManager'][_0x2c1088(0x254)](_0x5813b3)));_0x29de27[_0x2c1088(0x1c6)](clearInterval,_0x1306bb),_0x29de27[_0x2c1088(0x1c5)](renderScreen,_0x4b0bb8['user']),console[_0x2c1088(0x243)](chalk_1[_0x2c1088(0x1ec)][_0x2c1088(0x248)]['white'](_0x29de27[_0x2c1088(0x1fc)]));const _0x56d05b=new cli_table3_1[(_0x2c1088(0x1ec))]({'head':[_0x29de27['snLnn'],_0x29de27[_0x2c1088(0x23c)],'Reward'],'style':{'border':[_0x29de27[_0x2c1088(0x22a)]]}});_0x1fcc21['forEach']((_0x45d3bb,_0x275a93)=>{const _0x2e1770=_0x2c1088,_0x286a3f=activeQuests[_0x275a93],_0x3c775a=_0x45d3bb;if(_0x29de27[_0x2e1770(0x259)](_0x45d3bb['status'],_0x29de27['cFzjO'])){const _0x18c983=_0x3c775a[_0x2e1770(0x208)]||_0x286a3f[_0x2e1770(0x1cd)]||_0x29de27['vMNVO'];_0x56d05b[_0x2e1770(0x224)]([_0x286a3f[_0x2e1770(0x1d4)],chalk_1[_0x2e1770(0x1ec)][_0x2e1770(0x264)](_0x29de27[_0x2e1770(0x226)]),chalk_1['default'][_0x2e1770(0x256)](_0x18c983)]);}else{const _0x392b9a=_0x45d3bb[_0x2e1770(0x1ef)][_0x2e1770(0x23f)]||_0x29de27[_0x2e1770(0x20a)];_0x56d05b['push']([_0x286a3f[_0x2e1770(0x1d4)],chalk_1[_0x2e1770(0x1ec)][_0x2e1770(0x1fb)](_0x2e1770(0x1e3)),chalk_1[_0x2e1770(0x1ec)][_0x2e1770(0x1fb)](_0x392b9a[_0x2e1770(0x200)](0x0,0x14))]);}}),console[_0x2c1088(0x243)](_0x56d05b[_0x2c1088(0x265)]()),console[_0x2c1088(0x243)](chalk_1[_0x2c1088(0x1ec)][_0x2c1088(0x264)](_0x29de27[_0x2c1088(0x252)]));})),client['connect']();
+const client = new ClientQuest(process.env.TOKEN as string);
+
+const QUEST_DB: Record<string, { name: string; duration: number }> = {
+	'1432436088508780675': { name: 'R.E.P.O. Monster', duration: 900 },
+	'1436125144404725770': { name: 'Download Comet Browser', duration: 900 },
+	'1439764528715010058': { name: 'New Season Ahsarah', duration: 900 },
+	'1440059727005614090': { name: 'Opera GX', duration: 42 },
+	'1418350811687419914': { name: 'The Power of Nitro', duration: 24 },
+	'1425677992721514516': { name: 'Battlefield 6 Launch', duration: 900 },
+	'1432424574561026070': { name: 'Dance with a Demon', duration: 900 },
+	'1435391191834165398': { name: 'ABI Red Drops Fest', duration: 900 },
+	'1437518140476100638': { name: 'Marvel Rivals S5.0', duration: 900 },
+	'1431027486506094623': { name: 'Amazon Luna', duration: 29 },
+	'1428083229587669155': { name: 'Bloons TD 6 Dart Monkey', duration: 900 },
+	'1428459919212019874': { name: 'Crimson Desert', duration: 29 },
+	'1435016951251603496': { name: 'Courtroom Chaos', duration: 75 },
+	'1421275302923079721': { name: 'Space Marine 2 Free Demo', duration: 900 },
+	'1435012985872715946': { name: 'Anno 117', duration: 158 },
+	'1432205768106705070': { name: 'Battlefield REDSEC', duration: 900 },
+	'1435367355759726642': { name: 'King of Meat Sale', duration: 29 },
+	'1436481141711442101': { name: 'Where Winds Meet Launch', duration: 900 },
+	'1430279721777762495': { name: 'PvZ Replanted', duration: 900 },
+	'1432798014786764871': { name: 'Honkai: Star Rail', duration: 900 },
+	'1410358070831480904': { name: 'Mobile Orbs Intro', duration: 31 },
+	'1428139680477614150': { name: 'ARC Raiders', duration: 91 },
+	'1432410015721062480': { name: 'ARC Raiders', duration: 900 },
+	'1427820398283722833': { name: 'Painkiller', duration: 99 },
+	'1427811805065121875': {
+		name: 'Battlefield 6 on PS5 Video',
+		duration: 29,
+	},
+	'1435777559475257428': { name: 'Amazon', duration: 29 },
+	'1422714633357103315': { name: 'Monopoly at McD\u2019s', duration: 96 },
+	'1435324548827451605': { name: 'GO Wild Area 2025', duration: 29 },
+	'1437537235133005914': {
+		name: 'Call of Duty: Black Ops 7',
+		duration: 900,
+	},
+	'1438202046804136028': {
+		name: 'Microsoft Edge - Your AI Browser',
+		duration: 29,
+	},
+	'1428092429030129755': {
+		name: 'Chainsaw Man \u2013 The Movie: Reze Arc',
+		duration: 61,
+	},
+	'1434969640194539610': { name: 'Dinkum on Switch', duration: 89 },
+	'1438642430571315290': {
+		name: 'Alloyed Collective Gupdoption',
+		duration: 900,
+	},
+	'1433219183411462265': { name: 'Palworld Collab', duration: 900 },
+	'1435003145339273317': { name: 'The Running Man', duration: 148 },
+	'1433542422268350574': { name: 'Firefox', duration: 19 },
+	'1430258734113755247': { name: 'Jurassic World Rebirth', duration: 29 },
+	'1432770475590684784': { name: 'Fortnite Discord', duration: 900 },
+	'1438303745166409840': { name: 'EVE Online Video', duration: 89 },
+	'1425291943302398073': { name: 'Discord Halloween 2025', duration: 22 },
+	'1427829905323724922': { name: 'Bugonia', duration: 114 },
+};
+
+type ActiveQuestStatus = 'Running' | 'Done';
+
+type ActiveQuest = {
+	id: string;
+	name: string;
+	reward: string;
+	remaining: number;
+	status: ActiveQuestStatus;
+};
+
+type UserInfo = {
+	username: string;
+	id: string;
+};
+
+let activeQuests: ActiveQuest[] = [];
+
+function formatTime(seconds: number): string {
+	if (seconds <= 0) return chalk.bold.green('\u2714 DONE');
+
+	const hours = Math.floor(seconds / 3600);
+	const minutes = Math.floor((seconds % 3600) / 60);
+	const remainingSeconds = seconds % 60;
+
+	return `${hours > 0 ? `${hours}h ` : ''}${minutes}m ${remainingSeconds}s`;
+}
+
+function getQuestData(quest: Quest): {
+	name: string;
+	duration: number;
+	reward: string;
+} {
+	const questId = quest.id || quest.config?.id || 'unknown';
+	let name = questId;
+	let duration = 900;
+	let reward = 'Unknown';
+
+	if (QUEST_DB[questId]) {
+		name = QUEST_DB[questId].name;
+		duration = QUEST_DB[questId].duration;
+	} else if (quest.config?.messages?.quest_name) {
+		name = quest.config.messages.quest_name.trim();
+	} else {
+		name = questId.toString().replace(/_/g, ' ').replace(/-/g, ' ');
+	}
+
+	const tasks = quest.config?.task_config?.tasks;
+	if (tasks) {
+		const firstTaskKey = Object.keys(tasks)[0] as keyof typeof tasks;
+		if (tasks[firstTaskKey]?.target) {
+			duration = tasks[firstTaskKey].target;
+		}
+	}
+
+	const rewards = quest.config?.rewards_config?.rewards;
+	if (rewards && rewards.length > 0) {
+		if (rewards[0].messages?.name) {
+			reward = rewards[0].messages.name;
+		} else if (rewards[0].orb_quantity) {
+			reward = `${rewards[0].orb_quantity} Orbs`;
+		}
+	}
+
+	return { name, duration, reward };
+}
+
+function renderScreen(user: UserInfo) {
+	console.clear();
+	console.log(
+		chalk.cyan(
+			figlet.textSync('Auto Quest lfathh', {
+				font: 'Slant',
+			}),
+		),
+	);
+	console.log(chalk.bold.green('\n\u2705  SYSTEM RUNNING...'));
+
+	const userTable = new Table({
+		head: [chalk.white('User Account'), chalk.white('User ID')],
+		colWidths: [30, 25],
+		style: {
+			border: ['white'],
+			'padding-left': 1,
+			'padding-right': 1,
+		},
+	});
+	userTable.push([chalk.yellow(user.username), chalk.cyan(user.id)]);
+	console.log(userTable.toString());
+
+	const questTable = new Table({
+		head: [
+			chalk.white('No'),
+			chalk.white('Quest Name'),
+			chalk.white('Reward'),
+			chalk.white('Time Left'),
+			chalk.white('Status'),
+		],
+		colWidths: [6, 35, 20, 15, 15],
+		colAligns: ['center', 'left', 'center', 'center', 'center'],
+		style: {
+			border: ['white'],
+		},
+	});
+
+	activeQuests.forEach((quest, index) => {
+		let timerColor = chalk.yellow;
+		if (quest.remaining < 60 && quest.remaining > 0) {
+			timerColor = chalk.red;
+		}
+
+		questTable.push([
+			index + 1,
+			chalk.cyan(quest.name),
+			chalk.magenta(quest.reward),
+			timerColor(formatTime(quest.remaining)),
+			quest.status === 'Running'
+				? chalk.blue('\u25b6 Running')
+				: chalk.green('\u2714 Done'),
+		]);
+	});
+
+	console.log(chalk.bold.white('\n\u{1F4CB}  LIVE PROGRESS'));
+	console.log(questTable.toString());
+	console.log(chalk.gray('\n>> Press Ctrl+C to stop.'));
+}
+
+client.once(
+	GatewayDispatchEvents.Ready,
+	async ({ data }: { data: { user: UserInfo } }) => {
+		console.log(chalk.cyan('Fetching quests...'));
+		await client.fetchQuests();
+
+		const manager = client.questManager;
+		const validQuests = manager?.filterQuestsValid() ?? [];
+
+		if (validQuests.length === 0) {
+			console.log(chalk.red('\u274c No valid quests found.'));
+			return;
+		}
+
+		activeQuests = validQuests.map((quest) => {
+			const details = getQuestData(quest);
+			return {
+				id: quest.id,
+				name: details.name,
+				reward: details.reward,
+				remaining: details.duration,
+				status: 'Running',
+			};
+		});
+
+		const intervalId = setInterval(() => {
+			activeQuests.forEach((quest) => {
+				if (quest.remaining > 0) quest.remaining--;
+				else quest.status = 'Done';
+			});
+			renderScreen(data.user);
+		}, 1000);
+
+		const results = await Promise.allSettled(
+			validQuests.map((quest) => manager!.doingQuest(quest)),
+		);
+
+		clearInterval(intervalId);
+		renderScreen(data.user);
+
+		console.log(chalk.bold.white('\n\u2705  FINAL EXECUTION REPORT'));
+		const reportTable = new Table({
+			head: ['Quest', 'Result', 'Reward'],
+			style: { border: ['white'] },
+		});
+
+		results.forEach((result, index) => {
+			const currentQuest = activeQuests[index];
+			if (!currentQuest) return;
+
+			if (result.status === 'fulfilled') {
+				const fulfilledResult =
+					result as PromiseFulfilledResult<unknown>;
+				const rewardValue =
+					fulfilledResult.value ??
+					currentQuest.reward ??
+					'Completed';
+				reportTable.push([
+					currentQuest.name,
+					chalk.green('SUCCESS'),
+					chalk.yellow(String(rewardValue)),
+				]);
+			} else {
+				const reasonMessage =
+					(result.reason as { message?: string })?.message ||
+					'Unknown Error';
+				reportTable.push([
+					currentQuest.name,
+					chalk.red('FAILED'),
+					chalk.red(reasonMessage.substring(0, 20)),
+				]);
+			}
+		});
+
+		console.log(reportTable.toString());
+		console.log(chalk.green('\u2728 All tasks finished.'));
+	},
+);
+
+client.connect();
