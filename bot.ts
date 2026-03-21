@@ -1,11 +1,29 @@
 import { GatewayDispatchEvents } from 'discord-api-types/v10';
+import { WebSocketShardEvents } from '@discordjs/ws';
 import chalk from 'chalk';
 import Table from 'cli-table3';
 import figlet from 'figlet';
 import { ClientQuest } from './src/client';
 import { Quest } from './src/quest';
 
-const client = new ClientQuest(process.env.TOKEN as string);
+function parseTokens(raw: string | undefined): string[] {
+	if (!raw) return [];
+	// Allow comma, newline, or whitespace separated tokens
+	return raw
+		.split(/[\s,]+/g)
+		.map((t) => t.trim())
+		.filter(Boolean);
+}
+
+const TOKENS = parseTokens(process.env.TOKEN);
+if (TOKENS.length === 0) {
+	console.error(
+		chalk.red(
+			'Missing TOKEN env var. Provide one or multiple tokens separated by comma/newline.',
+		),
+	);
+	process.exit(1);
+}
 
 const QUEST_DB: Record<string, { name: string; duration: number }> = {
 	'1432436088508780675': { name: 'R.E.P.O. Monster', duration: 900 },
@@ -81,7 +99,24 @@ type UserInfo = {
 	id: string;
 };
 
-let activeQuests: ActiveQuest[] = [];
+type AccountState = {
+	tokenIndex: number;
+	client: ClientQuest;
+	user: UserInfo | null;
+	activeQuests: ActiveQuest[];
+	intervalId: NodeJS.Timeout | null;
+	status: 'Connecting' | 'Running' | 'Finished' | 'Error';
+	error?: string;
+};
+
+const accounts: AccountState[] = TOKENS.map((token, idx) => ({
+	tokenIndex: idx,
+	client: new ClientQuest(token),
+	user: null,
+	activeQuests: [],
+	intervalId: null,
+	status: 'Connecting',
+}));
 
 function formatTime(seconds: number): string {
 	if (seconds <= 0) return chalk.bold.green('\u2714 DONE');
@@ -132,7 +167,7 @@ function getQuestData(quest: Quest): {
 	return { name, duration, reward };
 }
 
-function renderScreen(user: UserInfo) {
+function renderScreen() {
 	console.clear();
 	console.log(
 		chalk.cyan(
@@ -141,134 +176,167 @@ function renderScreen(user: UserInfo) {
 			}),
 		),
 	);
-	console.log(chalk.bold.green('\n\u2705  SYSTEM RUNNING...'));
+	console.log(
+		chalk.bold.green(
+			`\n\u2705  SYSTEM RUNNING... (${accounts.length} account${
+				accounts.length === 1 ? '' : 's'
+			})`,
+		),
+	);
 
-	const userTable = new Table({
-		head: [chalk.white('User Account'), chalk.white('User ID')],
-		colWidths: [30, 25],
-		style: {
-			border: ['white'],
-			'padding-left': 1,
-			'padding-right': 1,
-		},
-	});
-	userTable.push([chalk.yellow(user.username), chalk.cyan(user.id)]);
-	console.log(userTable.toString());
+	accounts.forEach((acc, accIndex) => {
+		const header = `ACCOUNT #${accIndex + 1} \u2022 ${acc.status}`;
+		console.log(chalk.bold.white(`\n${'-'.repeat(header.length)}`));
+		console.log(chalk.bold.white(header));
+		console.log(chalk.bold.white(`${'-'.repeat(header.length)}`));
 
-	const questTable = new Table({
-		head: [
-			chalk.white('No'),
-			chalk.white('Quest Name'),
-			chalk.white('Reward'),
-			chalk.white('Time Left'),
-			chalk.white('Status'),
-		],
-		colWidths: [6, 35, 20, 15, 15],
-		colAligns: ['center', 'left', 'center', 'center', 'center'],
-		style: {
-			border: ['white'],
-		},
-	});
-
-	activeQuests.forEach((quest, index) => {
-		let timerColor = chalk.yellow;
-		if (quest.remaining < 60 && quest.remaining > 0) {
-			timerColor = chalk.red;
-		}
-
-		questTable.push([
-			index + 1,
-			chalk.cyan(quest.name),
-			chalk.magenta(quest.reward),
-			timerColor(formatTime(quest.remaining)),
-			quest.status === 'Running'
-				? chalk.blue('\u25b6 Running')
-				: chalk.green('\u2714 Done'),
-		]);
-	});
-
-	console.log(chalk.bold.white('\n\u{1F4CB}  LIVE PROGRESS'));
-	console.log(questTable.toString());
-	console.log(chalk.gray('\n>> Press Ctrl+C to stop.'));
-}
-
-client.once(
-	GatewayDispatchEvents.Ready,
-	async ({ data }: { data: { user: UserInfo } }) => {
-		console.log(chalk.cyan('Fetching quests...'));
-		await client.fetchQuests();
-
-		const manager = client.questManager;
-		const validQuests = manager?.filterQuestsValid() ?? [];
-
-		if (validQuests.length === 0) {
-			console.log(chalk.red('\u274c No valid quests found.'));
+		if (acc.status === 'Error') {
+			console.log(chalk.red(acc.error ?? 'Unknown error'));
 			return;
 		}
 
-		activeQuests = validQuests.map((quest) => {
-			const details = getQuestData(quest);
-			return {
-				id: quest.id,
-				name: details.name,
-				reward: details.reward,
-				remaining: details.duration,
-				status: 'Running',
-			};
+		const userTable = new Table({
+			head: [chalk.white('User Account'), chalk.white('User ID')],
+			colWidths: [30, 25],
+			style: {
+				border: ['white'],
+				'padding-left': 1,
+				'padding-right': 1,
+			},
+		});
+		userTable.push([
+			chalk.yellow(acc.user?.username ?? '...'),
+			chalk.cyan(acc.user?.id ?? '...'),
+		]);
+		console.log(userTable.toString());
+
+		const questTable = new Table({
+			head: [
+				chalk.white('No'),
+				chalk.white('Quest Name'),
+				chalk.white('Reward'),
+				chalk.white('Time Left'),
+				chalk.white('Status'),
+			],
+			colWidths: [6, 35, 20, 15, 15],
+			colAligns: ['center', 'left', 'center', 'center', 'center'],
+			style: {
+				border: ['white'],
+			},
 		});
 
-		const intervalId = setInterval(() => {
-			activeQuests.forEach((quest) => {
-				if (quest.remaining > 0) quest.remaining--;
-				else quest.status = 'Done';
-			});
-			renderScreen(data.user);
-		}, 1000);
+		acc.activeQuests.forEach((quest, index) => {
+			let timerColor = chalk.yellow;
+			if (quest.remaining < 60 && quest.remaining > 0) {
+				timerColor = chalk.red;
+			}
 
-		const results = await Promise.allSettled(
-			validQuests.map((quest) => manager!.doingQuest(quest)),
+			questTable.push([
+				index + 1,
+				chalk.cyan(quest.name),
+				chalk.magenta(quest.reward),
+				timerColor(formatTime(quest.remaining)),
+				quest.status === 'Running'
+					? chalk.blue('\u25b6 Running')
+					: chalk.green('\u2714 Done'),
+			]);
+		});
+
+		console.log(chalk.bold.white('\n\u{1F4CB}  LIVE PROGRESS'));
+		console.log(questTable.toString());
+	});
+
+	console.log(chalk.gray('\n>> Press Ctrl+C to stop.'));
+}
+
+async function runAccount(acc: AccountState): Promise<void> {
+	try {
+		acc.client.websocketManager.on(
+			WebSocketShardEvents.Closed,
+			({ code }: { code: number }) => {
+				if (acc.status === 'Connecting') {
+					acc.status = 'Error';
+					acc.error = `Gateway closed during connect (code ${code}).`;
+					renderScreen();
+				}
+			},
+		);
+		acc.client.websocketManager.on(
+			WebSocketShardEvents.Error,
+			({ error }: { error: Error }) => {
+				if (acc.status === 'Connecting') {
+					acc.status = 'Error';
+					acc.error = `Gateway error during connect: ${error.message}`;
+					renderScreen();
+				}
+			},
 		);
 
-		clearInterval(intervalId);
-		renderScreen(data.user);
+		acc.client.once(
+			GatewayDispatchEvents.Ready,
+			async ({ data }: { data: { user: UserInfo } }) => {
+				acc.user = data.user;
+				console.log(
+					chalk.cyan(
+						`[Account #${acc.tokenIndex + 1}] Fetching quests...`,
+					),
+				);
+				await acc.client.fetchQuests();
 
-		console.log(chalk.bold.white('\n\u2705  FINAL EXECUTION REPORT'));
-		const reportTable = new Table({
-			head: ['Quest', 'Result', 'Reward'],
-			style: { border: ['white'] },
-		});
+				const manager = acc.client.questManager;
+				const validQuests = manager?.filterQuestsValid() ?? [];
 
-		results.forEach((result, index) => {
-			const currentQuest = activeQuests[index];
-			if (!currentQuest) return;
+				if (validQuests.length === 0) {
+					acc.status = 'Finished';
+					acc.activeQuests = [];
+					renderScreen();
+					return;
+				}
 
-			if (result.status === 'fulfilled') {
-				const fulfilledResult =
-					result as PromiseFulfilledResult<unknown>;
-				const rewardValue =
-					fulfilledResult.value ??
-					currentQuest.reward ??
-					'Completed';
-				reportTable.push([
-					currentQuest.name,
-					chalk.green('SUCCESS'),
-					chalk.yellow(String(rewardValue)),
-				]);
-			} else {
-				const reasonMessage =
-					(result.reason as { message?: string })?.message ||
-					'Unknown Error';
-				reportTable.push([
-					currentQuest.name,
-					chalk.red('FAILED'),
-					chalk.red(reasonMessage.substring(0, 20)),
-				]);
-			}
-		});
+				acc.status = 'Running';
+				acc.activeQuests = validQuests.map((quest) => {
+					const details = getQuestData(quest);
+					return {
+						id: quest.id,
+						name: details.name,
+						reward: details.reward,
+						remaining: details.duration,
+						status: 'Running',
+					};
+				});
 
-		console.log(reportTable.toString());
-		console.log(chalk.green('\u2728 All tasks finished.'));
-	},
-);
+				acc.intervalId = setInterval(() => {
+					acc.activeQuests.forEach((quest) => {
+						if (quest.remaining > 0) quest.remaining--;
+						else quest.status = 'Done';
+					});
+					renderScreen();
+				}, 1000);
 
-client.connect();
+				renderScreen();
+
+				await Promise.allSettled(
+					validQuests.map((quest) => manager!.doingQuest(quest)),
+				);
+
+				if (acc.intervalId) clearInterval(acc.intervalId);
+				acc.intervalId = null;
+				acc.status = 'Finished';
+				renderScreen();
+			},
+		);
+
+		await acc.client.connect();
+	} catch (e: any) {
+		if (acc.intervalId) clearInterval(acc.intervalId);
+		acc.intervalId = null;
+		acc.status = 'Error';
+		acc.error = e?.message ?? String(e);
+		renderScreen();
+	}
+}
+
+renderScreen();
+Promise.all(accounts.map((acc) => runAccount(acc))).catch(() => {
+	// errors are handled per-account
+});

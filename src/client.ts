@@ -53,18 +53,21 @@ async function makeRequest(
 const originalSend = WebSocketShard.prototype.send;
 WebSocketShard.prototype.send = async function (payload: GatewaySendPayload) {
 	if (payload.op === GatewayOpcodes.Identify) {
+		const original = payload.d as any;
 		payload.d = {
-			token: payload.d.token,
+			...original,
 			properties: {
+				...original?.properties,
 				...Constants.Properties,
 				is_fast_connect: false,
 				gateway_connect_reasons: 'AppSkeleton',
 			},
-			capabilities: 0,
-			presence: payload.d.presence,
-			compress: payload.d.compress,
+			capabilities:
+				original?.capabilities ?? 0,
 			client_state: {
-				guild_versions: {},
+				...original?.client_state,
+				guild_versions:
+					original?.client_state?.guild_versions ?? {},
 			},
 		} as any;
 	}
