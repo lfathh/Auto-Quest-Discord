@@ -1,4 +1,4 @@
-# 🤖 Discord Quest Selfbot
+# 🤖 Discord Quest Selfbot cli
 
 > **Disclaimer:** Selfbots are against Discord ToS. Use this at your own risk. I am not responsible for any bans.
 
